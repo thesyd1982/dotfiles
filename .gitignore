@@ -17,3 +17,6 @@
 !.oh-my-zsh/
 !.p10k.zsh
 !.tmux/
+!installer.sh
+!zsh_env_vars.txt
+!zsh_plugins.txt
