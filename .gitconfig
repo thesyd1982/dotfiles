@@ -1,0 +1,8 @@
+[user]
+	email = salah.yacine.douakha@gmail.com
+	name = thesyd1982
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	safecrlf = true

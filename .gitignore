@@ -1,0 +1,19 @@
+# Ignorer tous les fichiers
+*
+
+# Ne pas ignorer les fichiers nécessaires
+!.gitignore
+!README.md  # Si tu veux inclure un fichier README
+
+# Ne pas ignorer la configuration de Neovim
+!.config/
+!.config/nvim/
+
+# Ne pas ignorer les dotfiles et fichiers spécifiques
+!.tmux.conf
+!.gitconfig
+!.zshrc
+!.zshenv
+!.oh-my-zsh/
+!.p10k.zsh
+!.tmux/
