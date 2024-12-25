@@ -20,7 +20,7 @@
 !.oh-my-zsh/tools
 !.oh-my-zsh/templates
 !.p10k.zsh
-
+!.oh-my-zsh/oh-my-zsh.zsh
 !zsh_env_vars.txt
 !zsh_plugins.txt
 !.tmux/
