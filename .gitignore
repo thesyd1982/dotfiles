@@ -14,7 +14,7 @@
 !.gitconfig
 !.zshrc
 !.zshenv
-!.oh-my-zsh/
+!.oh-my-zsh/*
 !.p10k.zsh
 !.tmux/
 !installer.sh
