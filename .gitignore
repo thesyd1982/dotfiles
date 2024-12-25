@@ -11,7 +11,7 @@
 
 # Ne pas ignorer les dotfiles et fichiers spécifiques
 !.gitconfig
-
+ 
 !.zshrc
 !.zshenv
 !.oh-my-zsh/
