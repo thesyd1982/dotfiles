@@ -82,6 +82,7 @@ alias v=nvim
 alias vzc="v ~/.zshrc"
 alias vomz="v ~/.oh-my-zsh"
 alias vnv='v ~/.config/nvim'
+alias nvim-mcp='nvim --listen 0.0.0.0:6666'
 
 # Vi mode
 bindkey -v
@@ -125,8 +126,7 @@ alias air='~/go/bin/air'
 alias kcef='tmux new-session -A -s kce-front'
 alias githubssh="ssh -T git@github.com"
 # Start SSH service
-sudo service ssh start
-
+sudo service ssh start > /dev/null 2>&1
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -140,4 +140,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # Start cron service
 sudo service cron start > /dev/null 2>&1
-export FUNCNEST=100
+export FUNCNEST=1000
+export BROWSER="/mnt/c/Windows/explorer.exe"
+
+# ========================================
+# 🚀 SCRIPTS PERSONNALISÉS ET ALIAS
+# ========================================
+
+# Charger les alias et fonctions personnalisés
+if [[ -f "$HOME/dotfiles/aliases.zsh" ]]; then
+    source "$HOME/dotfiles/aliases.zsh"
+fi
+
+# Ou si installé via le script d'installation :
+if [[ -f "$HOME/.config/dotfiles/aliases.zsh" ]]; then
+    source "$HOME/.config/dotfiles/aliases.zsh"
+fi

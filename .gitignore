@@ -1,28 +1,59 @@
-# Ignorer tous les fichiers
+# Ignorer tous les fichiers par défaut
 *
 
 # Ne pas ignorer les fichiers nécessaires
 !.gitignore
-!README.md  # Si tu veux inclure un fichier README
+!README.md
+!install.sh
 
-# Ne pas ignorer la configuration de Neovim
-!.config/
-!.config/nvim/
-
-# Ne pas ignorer les dotfiles et fichiers spécifiques
-!.gitconfig
- 
+# Configuration shell
 !.zshrc
 !.zshenv
-!.oh-my-zsh/
-!.oh-my-zsh/plugins
-!.oh-my-zsh/themes
-!.oh-my-zsh/tools
-!.oh-my-zsh/templates
 !.p10k.zsh
-!.oh-my-zsh/oh-my-zsh.zsh
 !zsh_env_vars.txt
 !zsh_plugins.txt
-!.tmux/
+
+# Configuration git
+!.gitconfig
+
+# Configuration tmux
 !.tmux.conf
-!installer.sh
+
+# Dossiers de configuration
+!.config/
+!.config/nvim/
+!.config/nvim/**
+
+# Oh-my-zsh personnalisé
+!plugins/
+!plugins/**
+!themes/
+!themes/**
+!custom/
+!custom/**
+
+# Scripts
+!scripts/
+!scripts/**
+!binaries/
+!binaries/**
+
+# Templates (pas les vrais fichiers de config avec secrets)
+!.wakatime.cfg.template
+
+# SÉCURITÉ : Toujours ignorer les fichiers avec secrets
+.wakatime.cfg
+*.key
+*.pem
+.env
+.env.local
+*.secret
+*_secret
+*_secrets
+.git-credentials
+
+# Fichiers temporaires et cache
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

@@ -103,8 +103,10 @@ fi
 
 # Copier Oh My Zsh personnalisé
 print_message "Copie de la configuration Oh My Zsh personnalisée..."
-if [ -d "$HOME/.oh-my-zsh" ] && [ -d ".oh-my-zsh/custom" ]; then
-    cp -r .oh-my-zsh/custom/* "$HOME/.oh-my-zsh/custom/"
+if [ -d "$HOME/.oh-my-zsh" ]; then
+    cp -r ./custom/* "$HOME/.oh-my-zsh/oh-my-zsh/custom"
+    cp -r ./themes/* "$HOME/.oh-my-zsh/oh-my-zsh/themes"
+    cp -r ./plugins/* "$HOME/.oh-my-zsh/oh-my-zsh/plugins"
 else
     echo "Oh My Zsh n'est pas installé ou le dossier custom n'existe pas."
 fi
@@ -116,4 +118,3 @@ if [ "$SHELL" != "/bin/zsh" ]; then
 fi
 
 print_message "Installation terminée ! Redémarrez votre terminal ou exécutez 'source ~/.zshrc' pour appliquer les changements."
-
