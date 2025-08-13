@@ -285,14 +285,7 @@ main() {
         print_info "Oh My Zsh est déjà installé."
     fi
     
-    # Installer Powerlevel10k
-    if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
-        print_message "Installation de Powerlevel10k..."
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    else
-        print_info "Powerlevel10k est déjà installé."
-    fi
-    
+
     # Installer les plugins Oh My Zsh essentiels
     if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
         print_message "Installation de zsh-autosuggestions..."
