@@ -297,6 +297,16 @@ main() {
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     fi
     
+    # Installer TPM (Tmux Plugin Manager)
+    if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+        print_message "Installation de TPM (Tmux Plugin Manager)..."
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        print_message "TPM installé. Les plugins tmux seront installés au premier lancement."
+        print_info "Dans tmux, appuyez sur Prefix + I pour installer les plugins"
+    else
+        print_info "TPM est déjà installé."
+    fi
+    
     # Créer les liens symboliques
     print_message "Création des liens symboliques..."
     safe_symlink "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
