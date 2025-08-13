@@ -285,6 +285,25 @@ main() {
         print_info "Oh My Zsh est déjà installé."
     fi
     
+    # Installer Powerlevel10k
+    if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
+        print_message "Installation de Powerlevel10k..."
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    else
+        print_info "Powerlevel10k est déjà installé."
+    fi
+    
+    # Installer les plugins Oh My Zsh essentiels
+    if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
+        print_message "Installation de zsh-autosuggestions..."
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    fi
+    
+    if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
+        print_message "Installation de zsh-syntax-highlighting..."
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    fi
+    
     # Créer les liens symboliques
     print_message "Création des liens symboliques..."
     safe_symlink "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
