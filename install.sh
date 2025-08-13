@@ -335,8 +335,14 @@ main() {
     # Copier Oh My Zsh personnalisé
     print_message "Configuration Oh My Zsh personnalisée..."
     if [ -d "$HOME/.oh-my-zsh" ]; then
+        # Copier les thèmes depuis dotfiles
+        if [ -d "$DOTFILES_DIR/themes" ]; then
+            mkdir -p "$HOME/.oh-my-zsh/custom/themes"
+            cp -r "$DOTFILES_DIR/themes"/* "$HOME/.oh-my-zsh/custom/themes/"
+            print_message "Thèmes copiés depuis dotfiles"
+        fi
+        
         [[ -d "$DOTFILES_DIR/custom" ]] && cp -r "$DOTFILES_DIR/custom"/* "$HOME/.oh-my-zsh/custom/"
-        [[ -d "$DOTFILES_DIR/themes" ]] && cp -r "$DOTFILES_DIR/themes"/* "$HOME/.oh-my-zsh/themes/"
         [[ -d "$DOTFILES_DIR/plugins" ]] && cp -r "$DOTFILES_DIR/plugins"/* "$HOME/.oh-my-zsh/plugins/"
         print_message "Configuration Oh My Zsh mise à jour"
     else
