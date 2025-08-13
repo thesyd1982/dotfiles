@@ -125,8 +125,8 @@ alias "cat"="batcat"
 alias air='~/go/bin/air'
 alias kcef='tmux new-session -A -s kce-front'
 alias githubssh="ssh -T git@github.com"
-# Start SSH service
-sudo service ssh start > /dev/null 2>&1
+# Start SSH service only if not running
+pgrep sshd > /dev/null || sudo service ssh start > /dev/null 2>&1
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -138,8 +138,8 @@ alias viteconf=viteconf.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# Start cron service
-sudo service cron start > /dev/null 2>&1
+# Start cron service only if not running
+pgrep cron > /dev/null || sudo service cron start > /dev/null 2>&1
 export FUNCNEST=1000
 export BROWSER="/mnt/c/Windows/explorer.exe"
 
